@@ -1,4 +1,4 @@
-package com.zerdasoftware.loginsignup.auth
+package com.zerdasoftware.loginsignup.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

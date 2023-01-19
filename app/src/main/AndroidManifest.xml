@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="s">
         <activity
-            android:name=".auth.AuthActivity"
+            android:name=".ui.auth.AuthActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

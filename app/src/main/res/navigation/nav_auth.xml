@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.zerdasoftware.loginsignup.auth.LoginFragment"
+        android:name="com.zerdasoftware.loginsignup.ui.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.zerdasoftware.loginsignup.auth.RegisterFragment"
+        android:name="com.zerdasoftware.loginsignup.ui.auth.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register" />
 </navigation>
