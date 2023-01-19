@@ -1,1 +1,5 @@
 /build
+
+.Constants
+
+app/src/main/java/com/zerdasoftware/loginsignup/Constants.kt
