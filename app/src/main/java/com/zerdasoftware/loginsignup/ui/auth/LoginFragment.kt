@@ -1,21 +1,28 @@
+@file:Suppress("DEPRECATION")
+
 package com.zerdasoftware.loginsignup.ui.auth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import com.zerdasoftware.loginsignup.R
+import com.zerdasoftware.loginsignup.databinding.FragmentLoginBinding
+import com.zerdasoftware.loginsignup.network.AuthAPI
+import com.zerdasoftware.loginsignup.repository.AuthRepository
+import com.zerdasoftware.loginsignup.ui.base.BaseFragment
 
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment<AuthViewModel,FragmentLoginBinding,AuthRepository>() {
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel
     }
+
+    override fun getViewModel() = AuthViewModel::class.java
+
+    override fun getFragmentBinding(inflater:LayoutInflater,container:ViewGroup?)
+        = FragmentLoginBinding.inflate(inflater,container,false)
+
+    override fun getFragmentRepository() = AuthRepository(remoteDataSource.buildApi(AuthAPI::class.java))
+
 
 }
