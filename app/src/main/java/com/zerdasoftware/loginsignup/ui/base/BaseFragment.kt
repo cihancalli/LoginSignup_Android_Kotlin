@@ -20,12 +20,11 @@ abstract class BaseFragment<VM:ViewModel,B:ViewBinding,R:BaseRepository> : Fragm
     protected val remoteDataSource = RemoteDataSource()
 
     override fun onCreateView(inflater:LayoutInflater,container:ViewGroup?,savedInstanceState:Bundle?):View? {
-        return super.onCreateView(inflater,container,savedInstanceState)
 
         binding = getFragmentBinding(inflater,container)
         val factory = ViewModelFactory(getFragmentRepository())
         viewModel = ViewModelProvider(this,factory)[getViewModel()]
-        return binding.root
+        return binding!!.root
     }
 
     abstract fun getViewModel() : Class<VM>
