@@ -28,4 +28,8 @@ class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
         _registerResponse.value = repository.register(name,email,password)
     }
 
+    fun saveAuthToken(token:String) = viewModelScope.launch{
+        repository.saveAuthToken(token)
+    }
+
 }

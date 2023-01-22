@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.asLiveData
 import com.zerdasoftware.loginsignup.data.UserPreferences
 import com.zerdasoftware.loginsignup.ui.auth.AuthActivity
+import com.zerdasoftware.loginsignup.ui.home.HomeActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,13 +16,9 @@ class MainActivity : AppCompatActivity() {
         val userPreferences = UserPreferences(this)
 
         userPreferences.authToken.asLiveData().observe(this) {
-            println("MainActivity: ${it} Token is Null")
-            startActivity(Intent(this, AuthActivity::class.java))
+            println("MainActivity: Token $it")
+            val activity = if (it == null) AuthActivity::class.java else HomeActivity::class.java
+            startNewActivity(activity)
         }
-
-        /*
-        finish()
-
-         */
     }
 }
