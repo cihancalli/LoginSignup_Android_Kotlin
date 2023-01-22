@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.zerdasoftware.loginsignup.network.Resource
 import com.zerdasoftware.loginsignup.repository.AuthRepository
 import com.zerdasoftware.loginsignup.responses.LoginResponse
+import com.zerdasoftware.loginsignup.responses.MessageResponse
 import kotlinx.coroutines.launch
 
 class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
@@ -15,8 +16,16 @@ class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
     val loginResponse: LiveData<Resource<LoginResponse>>
         get() = _loginResponse
 
-    fun login (name:String,password:String) =  viewModelScope.launch {
-        _loginResponse.value = repository.login(name, password)
+    fun login (username:String,password:String) =  viewModelScope.launch {
+        _loginResponse.value = repository.login(username, password)
+    }
+
+    private val _registerResponse: MutableLiveData<Resource<MessageResponse>> = MutableLiveData()
+    val registerResponse: LiveData<Resource<MessageResponse>>
+        get() = _registerResponse
+
+    fun register (name:String,email:String,password:String) =  viewModelScope.launch {
+        _registerResponse.value = repository.register(name,email,password)
     }
 
 }

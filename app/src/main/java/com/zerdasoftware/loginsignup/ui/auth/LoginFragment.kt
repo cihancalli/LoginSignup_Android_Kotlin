@@ -31,6 +31,10 @@ class LoginFragment : BaseFragment<AuthViewModel,FragmentLoginBinding,AuthReposi
                 }
             }
         }
+        binding.textViewRegisterNow.setOnClickListener {
+            val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            androidx.navigation.Navigation.findNavController(it).navigate(action)
+        }
     }
 
     override fun getViewModel() = AuthViewModel::class.java
