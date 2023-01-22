@@ -1,7 +1,7 @@
-package com.zerdasoftware.loginsignup.network
+package com.zerdasoftware.loginsignup.data.network
 
-import com.zerdasoftware.loginsignup.responses.LoginResponse
-import com.zerdasoftware.loginsignup.responses.MessageResponse
+import com.zerdasoftware.loginsignup.data.responses.LoginResponse
+import com.zerdasoftware.loginsignup.data.responses.MessageResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
@@ -13,7 +13,7 @@ interface AuthAPI {
     suspend fun login(
         @Field("name") username:String,
         @Field("password") password:String,
-    ):LoginResponse
+    ): LoginResponse
 
     @FormUrlEncoded
     @POST("register")

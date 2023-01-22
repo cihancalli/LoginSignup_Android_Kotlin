@@ -1,4 +1,4 @@
-package com.zerdasoftware.loginsignup.network
+package com.zerdasoftware.loginsignup.data.network
 
 import com.zerdasoftware.loginsignup.BuildConfig
 import com.zerdasoftware.loginsignup.Constants.BASE_URL

@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zerdasoftware.loginsignup.network.Resource
-import com.zerdasoftware.loginsignup.repository.AuthRepository
-import com.zerdasoftware.loginsignup.responses.LoginResponse
-import com.zerdasoftware.loginsignup.responses.MessageResponse
+import com.zerdasoftware.loginsignup.data.network.Resource
+import com.zerdasoftware.loginsignup.data.repository.AuthRepository
+import com.zerdasoftware.loginsignup.data.responses.LoginResponse
+import com.zerdasoftware.loginsignup.data.responses.MessageResponse
 import kotlinx.coroutines.launch
 
 class AuthViewModel(private val repository: AuthRepository) : ViewModel() {

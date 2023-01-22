@@ -1,4 +1,4 @@
-package com.zerdasoftware.loginsignup.network
+package com.zerdasoftware.loginsignup.data.network
 
 import okhttp3.ResponseBody
 

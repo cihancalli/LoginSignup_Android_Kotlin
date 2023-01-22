@@ -1,4 +1,4 @@
-package com.zerdasoftware.loginsignup.responses
+package com.zerdasoftware.loginsignup.data.responses
 
 
 import com.google.gson.annotations.SerializedName

@@ -4,8 +4,8 @@ package com.zerdasoftware.loginsignup.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.zerdasoftware.loginsignup.repository.AuthRepository
-import com.zerdasoftware.loginsignup.repository.BaseRepository
+import com.zerdasoftware.loginsignup.data.repository.AuthRepository
+import com.zerdasoftware.loginsignup.data.repository.BaseRepository
 import com.zerdasoftware.loginsignup.ui.auth.AuthViewModel
 
 class ViewModelFactory(private val repository: BaseRepository): ViewModelProvider.NewInstanceFactory() {

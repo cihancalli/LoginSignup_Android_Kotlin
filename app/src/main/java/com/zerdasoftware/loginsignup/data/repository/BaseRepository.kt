@@ -1,7 +1,7 @@
-package com.zerdasoftware.loginsignup.repository
+package com.zerdasoftware.loginsignup.data.repository
 
-import com.zerdasoftware.loginsignup.network.AuthAPI
-import com.zerdasoftware.loginsignup.network.Resource
+import com.zerdasoftware.loginsignup.data.network.AuthAPI
+import com.zerdasoftware.loginsignup.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -10,7 +10,7 @@ abstract class BaseRepository(api: AuthAPI) {
 
     suspend fun <T> safeApiCall(
         apiCall: suspend ()-> T
-    ):Resource<T> {
+    ): Resource<T> {
         return withContext(Dispatchers.IO) {
             try {
                 Resource.Success(apiCall.invoke())

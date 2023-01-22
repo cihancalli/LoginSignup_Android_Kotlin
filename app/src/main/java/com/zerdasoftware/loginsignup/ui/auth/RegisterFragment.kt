@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.zerdasoftware.loginsignup.databinding.FragmentRegisterBinding
-import com.zerdasoftware.loginsignup.network.AuthAPI
-import com.zerdasoftware.loginsignup.network.Resource
-import com.zerdasoftware.loginsignup.repository.AuthRepository
+import com.zerdasoftware.loginsignup.data.network.AuthAPI
+import com.zerdasoftware.loginsignup.data.network.Resource
+import com.zerdasoftware.loginsignup.data.repository.AuthRepository
 import com.zerdasoftware.loginsignup.ui.base.BaseFragment
 
 class RegisterFragment : BaseFragment<AuthViewModel, FragmentRegisterBinding, AuthRepository>() {
